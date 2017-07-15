@@ -17,14 +17,22 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(method=RequestMethod.POST, value="/create")
-	public void createUser(@RequestBody User user){
-		userService.saveUser(user);
+	@RequestMapping("/table")
+	public Object createTable(){
+		return userService.getAllUsers();
 	}
+	
 	@RequestMapping("/readAll")
 	public Object getAllUser(){
 		return userService.getAllUsers();
 	}
+	
+	@RequestMapping(method=RequestMethod.POST, value="/create")
+	public void createUser(@RequestBody User user){
+		userService.createtable("ANPIUser", 10L, 10L, "userId", "N");
+		userService.saveUser(user);
+	}
+	
 	@RequestMapping("/read/{id}")
 	public User getUser(@PathVariable int id) {
 		return userService.getUser(id);
