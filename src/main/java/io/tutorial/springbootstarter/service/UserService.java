@@ -41,8 +41,8 @@ public class UserService {
 		repository.delete(id);
 		
 	}
-	public User getUser(int id) {
-		return repository.findOne(id);
+	public User getUser(int userId) {
+		return repository.findOne(userId);
 	}
 	public Iterable<User> getAllUsers() {
 		return repository.findAll();
