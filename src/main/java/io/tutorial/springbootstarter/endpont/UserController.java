@@ -26,15 +26,15 @@ public class UserController {
 		return userService.getAllUsers();
 	}
 	@RequestMapping("/read/{id}")
-	public User getUser(@PathVariable String id) {
+	public User getUser(@PathVariable int id) {
 		return userService.getUser(id);
 	}
 	@RequestMapping(method=RequestMethod.PUT, value="/topics/{id}")
-	public void updateUser(@RequestBody User user, @PathVariable String id){
+	public void updateUser(@RequestBody User user, @PathVariable int id){
 		userService.UpdateUser(user);
 	}
 	@RequestMapping(method=RequestMethod.DELETE, value="/topics/{id}")
-	public void deleteUser(@PathVariable String id) {
+	public void deleteUser(@PathVariable int id) {
 		userService.deleteUser(id);
 	}
 }

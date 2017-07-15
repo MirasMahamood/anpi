@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.tutorial.springbootstarter.entities.User;
-import io.tutorial.springbootstarter.entities.UserRepository;
+import io.tutorial.springbootstarter.repository.UserRepository;
 
 @Service
 public class UserService {
@@ -20,11 +20,11 @@ public class UserService {
 		repository.save(entity);
 	}
 
-	public void deleteUser(String id) {
+	public void deleteUser(int id) {
 		repository.delete(id);
 		
 	}
-	public User getUser(String id) {
+	public User getUser(int id) {
 		return repository.findOne(id);
 	}
 	public Iterable<User> getAllUsers() {
